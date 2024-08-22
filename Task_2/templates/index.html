@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .form-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .form-container h3 {
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            color: #333;
+            text-align: center;
+        }
+
+        .form-container hr {
+            border: 0;
+            height: 1px;
+            background: #3498db;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            color: #555;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group select {
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            padding: 12px;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box; /* Ensure padding and border are included in width */
+            height: auto; /* Adjust height to auto */
+            line-height: 1.5; /* Ensure line-height is set correctly */
+        }
+
+        .button {
+            background-color: #3498db;
+            border: none;
+            color: #fff;
+            padding: 12px 24px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-align: center;
+            width: 100%;
+        }
+
+        .button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <div class="form">
+            <h3>Titanic Survival Predictor</h3>
+            <hr>
+            <form action="/predict" method="post">
+                <div class="form-group">
+                    <label for="ageBand">Age</label>
+                    <select name='Age' id="ageBand">
+                        <option selected value="6">Choose your age band...</option>
+{#                        <option value="0">16-32</option>#}
+{#                        <option value="1">32-48</option>#}
+{#                        <option value="2">48-64</option>#}
+{#                        <option value="3">64 or upper</option>#}
+                        <option value="0">0-7</option>
+                        <option value="1">7-14</option>
+                        <option value="2">14-21</option>
+                        <option value="3">21-28</option>
+                        <option value="0">28-35</option>
+                        <option value="1">35-42</option>
+                        <option value="2">42-49</option>
+                        <option value="3">49-56</option>
+                        <option value="0">56-63</option>
+                        <option value="1">63 or upper</option>
+
+
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select name='Sex' id="gender">
+                        <option selected value="6">Choose your sex...</option>
+                        <option value="0">Female</option>
+                        <option value="1">Male</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="class">Which class do you prefer?</label>
+                    <select name='Pclass' id="class">
+                        <option selected value="6">Choose your class...</option>
+                        <option value="1">First</option>
+                        <option value="2">Second</option>
+                        <option value="3">Third</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="fare">Fare option</label>
+                    <select name='Fare' id="fare">
+                        <option selected value="6">Fare...</option>
+                        <option value="0">0-7$</option>
+                        <option value="1">7$-14$</option>
+                        <option value="2">14$-31$</option>
+                        <option value="3">31$-47$</option>
+                        <option value="2">47$-70$$</option>
+                        <option value="3">70$ or upper</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="embarked">Where are you coming from?</label>
+                    <select name='Embarked' id="embarked">
+                        <option selected value="6">Embarked...</option>
+                        <option value="0">Southampton</option>
+                        <option value="1">Cherbourg</option>
+                        <option value="2">Queenstown</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="isAlone">Are you alone?</label>
+                    <select name='IsAlone' id="isAlone">
+                        <option selected value="6">SibSip...</option>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+                <button type="submit" class="button">Get Result</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
